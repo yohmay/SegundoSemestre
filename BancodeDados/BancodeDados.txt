@@ -1,0 +1,35 @@
+Banco de Dados.
+
+. Versão SQL Developer 11G.
+. Criando a primeira conexão, definindo o nome da conexão e do usuário.
+. Criando a primeira tabela, que será utilizada para registros e contratos de jogadores 
+. Inserindo o nome e os campos para a tabela.
+NUMBER - Campo de Número.
+VARCHAR2 - Será um campo de Texto.
+. Criando as regras a serem definidas na tabela.
+CONSTRAINT - 
+NOT NULL -
+UNIQUE -
+PRIMARY KEY -
+FOREIGN KEY - 
+CHECK -
+. Será criado uma nova tabela para o contrato, definindo a data de inicio e fim, e aplicando a regra para registro atráves do id da tabela criada anteriormente, e a data de inicio do contrato.
+. Criando uma regra e citando com referencia para localizar o id do jogador na outra tabela. 
+. Criando uma regra de validação de datas do contrato.
+ALTER TABLE nomedatabela RENAME TO nomealterado; - Para alterar o nome da tabela.
+ALTER TABLE nomedatabela ADD coluna VARCHAR2(30); - Para adicionar uma nova coluna.
+ALTER TABLE nomedatabela RENAME COLUMN nomecoluna TO nomealterado; - Para alterar o nome de uma coluna.
+DESC nomedatabela; - Mostra a estrutura da tabela.
+ALTER TABLE nomedatabela MODIFY nomedacoluna NUMBER(5,0) - Para alterar o tipo da coluna na tabela.
+ALTER TABLE nomedatabela DROP COLUMN nomedacoluna CASCADE CONSTRAINT; - Para excluir uma estrutura de uma tabela.
+ALTER TABLE nomedatabela
+DROP CONSTRAINT regracriada; - Para excluir a regra criada.
+DROP TABLE - Excluir tabela.
+
+. Para retornar o código, basta seleciona-lo e executar.
+
+ALTER TABLE CONTRATADO
+DISABLED CONSTRAINT FK_CONTRATADO_REF_JOGADOR; - Para desabilitar regras definidas na tabela.
+ALTER TABLE CONTRATADO
+ENABLE CONSTRAINT FK_CONTRATADO_REF_JOGADOR; - Para habilitar regras definidas na tabela.
+
