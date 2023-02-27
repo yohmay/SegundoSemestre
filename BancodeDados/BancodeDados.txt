@@ -7,12 +7,12 @@ Banco de Dados.
 NUMBER - Campo de Número.
 VARCHAR2 - Será um campo de Texto.
 . Criando as regras a serem definidas na tabela.
-CONSTRAINT - 
-NOT NULL -
-UNIQUE -
-PRIMARY KEY -
-FOREIGN KEY - 
-CHECK -
+CONSTRAINT - Restrições que são estabelecidas para coluna em um banco de dados.
+NOT NULL - Determina que a coluna tenha um preenchimento obrigatório não aceitando valores null.
+UNIQUE - Determina que não poderá possuir valores iguais.
+PRIMARY KEY - Cria um índice único para cada conjunto de coluna.
+FOREIGN KEY - Determina uma coluna ou um conjunto de colunas possuam os valores em outras tabelas, referente a uma referência ou a um relacionamento.
+CHECK - Especifica a condição que a coluna precisa para salvar o registro.
 . Será criado uma nova tabela para o contrato, definindo a data de inicio e fim, e aplicando a regra para registro atráves do id da tabela criada anteriormente, e a data de inicio do contrato.
 . Criando uma regra e citando com referencia para localizar o id do jogador na outra tabela. 
 . Criando uma regra de validação de datas do contrato.
@@ -33,3 +33,32 @@ DISABLED CONSTRAINT FK_CONTRATADO_REF_JOGADOR; - Para desabilitar regras definid
 ALTER TABLE CONTRATADO
 ENABLE CONSTRAINT FK_CONTRATADO_REF_JOGADOR; - Para habilitar regras definidas na tabela.
 
+. Comandos DML 
+ Manipulando Informações:
+INSERT - Cria um novo registro (linha) em uma tabela.
+UPDATE - Uma declaração UPDATE é uma atualização dos dados de um ou mais registros de uma tabela.
+DELETE - Uma declaração DELETE remove um ou mais registros de uma tabela. O comando DELETE pode conter as condições de deleção das informações.
+RENAME - Renomeia um determinado dado selecionado.
+CREATE TABLE.. AS SELECT - Usado para criar e recuperar dados do banco de dados
+
+ Retornando Informações:
+SELECT - Uma declaração SELECT permite a consulta e retorno de um conjunto de registros de uma ou mais tabelas.
+DISTINCTS - Elimina repetições em consultas.
+EXPRESSÕES ARITMÉTICAS:
+Regras de precedência: multiplicação(*), divisão(/), adição(+), subtração(-).
+Multiplicação e divisão têm prioridade sobre adição e subtração.
+Operadores de mesma prioridade são executados da esquerda para a direita.
+Parênteses podem ser usados para forçar a prioridade dos cálculos e tornar o entendimento das fórmulas mais claro.
+WHERE - Utilizado para filtrar registros
+FROM - Serve para nomear banco de dados, tabelas, colunas, ou objetos de banco de dados.
+
+. Funções de Decisões.
+DECODE - Função utilizada que substitui o valor específico por outro valor específico ou um valor padrão.
+CASE - Permite a criação de estruturas de controle complexas para teste de condições.
+
+. Cláusulas GROUP BY E HAVING
+AVG - Função agregada.
+MAX - Utilizada para encontrar o valor máximo, de cada coluna em cada grupo.
+MIN - Utilizada para encontrar o valor minímo.
+GROUP BY - Agrupa os produtos de acordo com cada tipo existente.
+HAVING - Restringe apenas os registros que possuem uma específicação informada.
