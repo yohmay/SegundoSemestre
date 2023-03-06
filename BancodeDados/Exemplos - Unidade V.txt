@@ -1,0 +1,35 @@
+-- Comando PL SQL
+
+BEGIN
+INSERT INTO employees
+(employees_ID, first_name, last_name, email, hire_date, job_ID, salary)
+VALUES
+(employees_seq.NEXTVAL, 'Ruth', 'CORES', 'RCORES', sysdate, 'AD_ASST', 4000);
+END
+
+-- Declarando Cursor
+DECLARE
+CURSOR emp_cursor IS
+SELECT employees_ID, last_name FROM employees
+WHERE department_ID = 30;
+
+-- Abrindo o Cursor 
+DECLARE 
+CURSOR emp_cursor IS
+SELECT employees_ID, last_name FROM employees
+WHERE department_ID = 30;
+-- ...
+BEGIN 
+OPEN emp_cursor; 
+
+-- Exemplo Procedures
+CREATE OR REPLACE PROCEDURE Nome_Proc
+(
+    Argumento1 modo Tipo_de_Dados;
+    Argumento2 modo Tipo_de_Dados;
+    Argumento3 modo Tipo_de_Dados;)
+IS ou AS
+    Variáveis locais, constantes,..
+BEGIN
+    Bloco PL/SQL
+END nome_da_procedute;

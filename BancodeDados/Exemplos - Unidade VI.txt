@@ -1,0 +1,36 @@
+-- Exemplo Trigger
+CREATE OR REPLACE FUNCTION primeiro_nome_func
+RETURN VARCHAR(20);
+IS
+emp_name VARCHAR(20);
+BEGIN
+    SELECT primeiro_nome INTO emp_name
+    FROM funcionarios_tbl
+    WHERE ID = 90;
+
+    RETURN emp_name;
+END;
+
+-- Exemplo de como executar: 
+SELECT primeiro_nome_func FROM dual;
+
+-- Exemplo Exception
+CREATE OR REPLACE PROCEDURE add_new_order
+    (order_id_in IN NUMBER, sales_in IN NUMBER)
+IN
+    no_sales EXCEPTION;
+BEGIN
+    IF sales_in = 0 THEN 
+        RAISE no_sales;
+    ELSE
+        INSERT INTO orders (order_id, total_sales)
+        VALUES (order_id_in, sales_in);
+    END IF;
+EXCEPTION
+    WHEN DUP_VAL_ON_INDEX THEN
+        raise_application_error(-20001,'Erro de pedido duplicado.');
+    WHEN no_sales THEN
+        raise_application_error(-20001,'Nenhum vendedor selecionado.');
+    WHEN
+        raise_application_error(-20002,'Erro na inserção do pedido.');
+END;
